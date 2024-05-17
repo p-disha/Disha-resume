@@ -1,59 +1,50 @@
-/* General Styles */
+/* Reset styles */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: 'Open Sans', sans-serif;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
-  color: #333;
-  line-height: 1.6;
-  padding: 20px;
-}
-
-/* Header Styles */
+/* Header styles */
 header {
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  border-radius: 10px;
-  text-align: center;
-  animation: fadeInDown 1s ease-in-out;
 }
 
 h1 {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  color: #333;
+  color: #fff;
+  text-align: center;
   font-size: 2.5em;
 }
 
-/* Main Content Styles */
+/* Main container styles */
 main {
+  background-color: #f2f2f2;
+  padding: 50px 0px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 20px 0;
 }
 
+/* Article box styles */
 article {
   margin: 10px;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #fff;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
   flex-basis: 100%;
-  animation: fadeInUp 1s ease-in-out;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 article:hover {
   transform: translateY(-10px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Responsive styles */
 @media (min-width: 600px) {
   article {
     flex-basis: calc(50% - 20px);
@@ -66,15 +57,20 @@ article:hover {
   }
 }
 
+/* Article heading styles */
 h2 {
   margin-bottom: 20px;
-  font-family: 'Montserrat', sans-serif;
-  color: #ff7e5f;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
   font-size: 1.8em;
+  border-bottom: 2px solid #6a11cb;
+  padding-bottom: 10px;
 }
 
-/* List Styles */
+/* List styles */
 ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -84,9 +80,9 @@ li {
   color: #555;
 }
 
-/* Form Styles */
+/* Form styles */
 form {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #fff;
   padding: 20px;
   border-radius: 10px;
   margin-top: 20px;
@@ -97,6 +93,8 @@ label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
 }
 
 input[type="text"],
@@ -107,8 +105,14 @@ textarea {
   margin-bottom: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #fff;
-  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f2f2f2;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  background-color: #e0e0e0;
+  outline: none;
 }
 
 button[type="submit"] {
@@ -118,32 +122,10 @@ button[type="submit"] {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 button[type="submit"]:hover {
   background-color: #3e8e41;
-}
-
-/* Animations */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  transform: scale(1.05);
 }

@@ -75,7 +75,7 @@ h2 {
 
 /* List Styles */
 ul {
-  list-style: none;
+  list-style-type: circle;
 }
 
 li {
